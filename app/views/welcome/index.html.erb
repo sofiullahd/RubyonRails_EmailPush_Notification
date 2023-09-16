@@ -1,0 +1,16 @@
+<h1>Welcome to Email Notification App</h1>
+<%= form_tag(send_email_path, method: :post) do %>
+  <%= label_tag :email, 'Enter your email:' %>
+  <%= text_field_tag :email %>
+  <%= submit_tag 'Send Email' %>
+<% end %>
+
+<% if flash[:success] %>
+  <script>
+    alert("<%= flash[:success] %>");
+  </script>
+<% elsif flash[:error] %>
+  <script>
+    alert("<%= flash[:error] %>");
+  </script>
+<% end %>
